@@ -35,9 +35,26 @@ return gt
 };
 
 //blueIntensity
-
+Color.blueIntensity = function(rgb){
+var gt = rgb[2]/255
+bt = Math.Round(bt)*100
+return bt
 
 //brightness
-
-
+Color.brightnessIntensity = function(rgb){
+  let bright = (Color.blueIntensity(rgb)+Color.greenIntensity(rgb)+Color.redIntensity(rgb))/3;
+  bright = Math.round(bright);
+  return bright;
+}
 //complement
+Color.complement = function(rgb)
+{
+  var comp=[]
+  for(var i=0,i<3, i++)
+  {
+    comp.push(255-rgb[i])
+  }
+  return comp
+};
+
+Color.greyScale = function()
